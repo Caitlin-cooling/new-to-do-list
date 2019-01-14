@@ -6,6 +6,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       list: [],
+      hash: {},
       title: "",
       date: ""
     };
@@ -15,11 +16,20 @@ class App extends React.Component {
   }
 
   handleClick(e) {
-    console.log(this.state.date)
     e.preventDefault();
 
+    console.log("before hash", this.state.hash)
+
+    this.state.hash['title'] = this.state.title;
+    this.state.hash['date'] = this.state.date;
+
+    var newHash = this.state.hash
+
+    console.log("after hash", this.state.hash)
+
     var newList = this.state.list.slice();
-    newList.push(this.state.title);
+    newList.push(newHash);
+    console.log('list', newList)
     this.setState({list:newList})
   }
 
@@ -37,7 +47,7 @@ class App extends React.Component {
     let element;
     let listItems;
 
-    listItems = this.state.list.map((todo, i) => <li key={'todo-' + i}>{todo}</li>)
+    listItems = this.state.list.map((todo, i) => <li key={'todo-' + i}>{todo['title']} is due {todo['date']}</li>)
     todos = <ul>{listItems}</ul>
 
     form = <form>
