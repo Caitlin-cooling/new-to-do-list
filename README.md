@@ -9,6 +9,13 @@ This app is a continuation of [to-do-list](https://github.com/Caitlin-cooling/to
 1. `git clone https://github.com/Caitlin-cooling/new-to-do-list.git`
 2. `cd to-do-list`
 3. `npm install` to install dependencies
-4. Open `dist/index.html` in the browser.
+4. Run `npm run start` to start the webpack server, this will automatically open your browser to the correct page where you can begin creating to dos!
 
-Once you make a change, please ensure to run `npm run start` to make those changes.
+
+## Dependancies
+This app uses the React library, including ReactDOM. It uses Babel to translate the JSX to JS and webpack as the modular bundler. It runs on the webpack dev server.
+
+## Known Issues
+* I would like to be able to move the rendering of the submit input along with the handleClick event handler to its' own component
+* I would like to be able to move rendering of all to dos out of the app component
+* I would like to store the to dos in local storage so that they are accessible after the session has ended
