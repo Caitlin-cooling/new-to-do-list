@@ -9,7 +9,7 @@ class App extends React.Component {
     this.state = {
       list: [],
       title: "",
-      date: ""
+      date: new Date()
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -21,19 +21,19 @@ class App extends React.Component {
 
     var hash = {};
     hash['title'] = this.state.title;
-    hash['date'] = this.state.date;
+    hash['date'] = this.state.date.toString();
 
     var newList = this.state.list.slice();
     newList.push(hash);
     this.setState({list:newList})
   }
 
-  handleTitleChange(e) {
+  handleTitleChange() {
     this.setState({title:event.target.value})
   }
 
-  handleDateChange(e) {
-    this.setState({date:event.target.value})
+  handleDateChange(date) {
+    this.setState({date: date})
   }
 
   render() {
@@ -50,7 +50,7 @@ class App extends React.Component {
             <Information
               title={this.state.title}
               handleTitleChange={this.handleTitleChange}
-              date={this.state.date}
+              dueDate={this.state.date}
               handleDateChange={this.handleDateChange}
             /><br/>
             <input type="submit" value="Create" onClick={this.handleClick}/>
@@ -67,7 +67,7 @@ var Label = function() {
 var Information = function(props) {
   return <div>
       <Title title={props.title} handleTitleChange={props.handleTitleChange}/>
-      <DueDate time={props.time} handleDateChange={props.handleDateChange}/>
+      <DueDate dueDate={props.dueDate} handleDateChange={props.handleDateChange}/>
     </div>
 }
 
@@ -85,8 +85,9 @@ var DueDate = function (props) {
   return <div>
     <DatePicker
       type="text"
-      placeholder="Date Due"
-      value={props.date}
+      placeholderText="Click to select a date"
+      dateFormat="dd/MM/yyyy"
+      selected={props.dueDate}
       onChange={props.handleDateChange}
     />
   </div>
