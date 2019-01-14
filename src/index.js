@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import DatePicker from "react-datepicker";
+import style from "react-datepicker/dist/react-datepicker.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -50,7 +52,7 @@ class App extends React.Component {
               handleTitleChange={this.handleTitleChange}
               date={this.state.date}
               handleDateChange={this.handleDateChange}
-            />
+            /><br/>
             <input type="submit" value="Create" onClick={this.handleClick}/>
           </form>
     element = <div>{todos}{form}</div>
@@ -80,14 +82,14 @@ var Title = function(props) {
 }
 
 var DueDate = function (props) {
-  return <p>
-    <input
+  return <div>
+    <DatePicker
       type="text"
       placeholder="Date Due"
       value={props.date}
       onChange={props.handleDateChange}
     />
-  </p>
+  </div>
 }
 
 ReactDOM.render(
