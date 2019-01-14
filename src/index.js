@@ -36,13 +36,28 @@ class App extends React.Component {
     this.setState({date: date})
   }
 
+  formatDate(date) {
+    var dueDate = new Date(this.state.date);
+    var dd = dueDate.getDate();
+    var mm = dueDate.getMonth() + 1;
+
+    var yyyy = dueDate.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+    return dd + '/' + mm + '/' + yyyy;
+  }
+
   render() {
     let form;
     let todos;
     let element;
     let listItems;
 
-    listItems = this.state.list.map((todo, i) => <li key={'todo-' + i}>{todo['title']} is due {todo['date']}</li>)
+    listItems = this.state.list.map((todo, i) => <li key={'todo-' + i}>{todo['title']} is due {this.formatDate(todo['date'])}</li>)
     todos = <ul>{listItems}</ul>
 
     form = <form>
@@ -84,7 +99,7 @@ var Title = function(props) {
 var DueDate = function (props) {
   return <div>
     <DatePicker
-      type="text"
+      todayButton={"Today"}
       placeholderText="Click to select a date"
       dateFormat="dd/MM/yyyy"
       selected={props.dueDate}
