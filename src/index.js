@@ -6,7 +6,6 @@ class App extends React.Component {
     super(props);
     this.state = {
       list: [],
-      hash: {},
       title: "",
       date: ""
     };
@@ -18,18 +17,12 @@ class App extends React.Component {
   handleClick(e) {
     e.preventDefault();
 
-    console.log("before hash", this.state.hash)
-
-    this.state.hash['title'] = this.state.title;
-    this.state.hash['date'] = this.state.date;
-
-    var newHash = this.state.hash
-
-    console.log("after hash", this.state.hash)
+    var hash = {};
+    hash['title'] = this.state.title;
+    hash['date'] = this.state.date;
 
     var newList = this.state.list.slice();
-    newList.push(newHash);
-    console.log('list', newList)
+    newList.push(hash);
     this.setState({list:newList})
   }
 
