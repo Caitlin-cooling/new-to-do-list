@@ -54,13 +54,6 @@ class App extends React.Component {
     return dd + '/' + mm + '/' + yyyy;
   }
 
-  createList() {
-    let listItems;
-
-    listItems = this.state.list.map((todo, i) => <li key={'todo-' + i}>{todo['title']} is due {todo['date']}</li>)
-    return <ul>{listItems}</ul>
-  }
-
   createForm() {
     return (<form>
             <Label/>
@@ -75,9 +68,16 @@ class App extends React.Component {
   render() {
     let element;
 
-    element = <div>{this.createList()}{this.createForm()}</div>
+    element = <div>{<ToDoList list={this.state.list}/>}{this.createForm()}</div>
     return (<div>{element}</div>);
   }
+}
+
+var ToDoList = function(props) {
+  let listItems;
+
+  listItems = props.list.map((todo, i) => <li key={'todo-' + i}>{todo['title']} is due {todo['date']}</li>)
+  return <ul>{listItems}</ul>
 }
 
 var Label = function() {
