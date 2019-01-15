@@ -11,11 +11,12 @@ This app is a continuation of [to-do-list](https://github.com/Caitlin-cooling/to
 3. `npm install` to install dependencies
 4. Run `npm run start` to start the webpack server, this will automatically open your browser to the correct page where you can begin creating to dos!
 
-
 ## Dependancies
 This app uses the React library, including ReactDOM. It uses Babel to translate the JSX to JS and webpack as the modular bundler. It runs on the webpack dev server.
+
+Style-loader is used as the CSS loader is used to handle CSS and react-datepicker is used for the due date calendar.
 
 ## Known Issues
 * I would like to be able to move the rendering of the submit input along with the handleClick event handler to its' own component
 * I would like to be able to move rendering of all to dos out of the app component
-* I would like to store the to dos in local storage so that they are accessible after the session has ended
+* I would like to store the to dos so that they are accessible after the session has ended
