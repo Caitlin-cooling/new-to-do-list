@@ -17,15 +17,18 @@ class App extends React.Component {
   }
 
   handleClick(e) {
+    let hash = {};
+    let date = "";
+    let newList = [];
     e.preventDefault();
 
-    var hash = {};
+    date = this.state.date.toString();
     hash['title'] = this.state.title;
-    hash['date'] = this.state.date.toString();
+    hash['date'] = this.formatDate(date);
 
-    var newList = this.state.list.slice();
+    newList = this.state.list.slice();
     newList.push(hash);
-    this.setState({list:newList})
+    this.setState({list:newList});
   }
 
   handleTitleChange() {
@@ -54,7 +57,7 @@ class App extends React.Component {
   createList() {
     let listItems;
 
-    listItems = this.state.list.map((todo, i) => <li key={'todo-' + i}>{todo['title']} is due {this.formatDate(todo['date'])}</li>)
+    listItems = this.state.list.map((todo, i) => <li key={'todo-' + i}>{todo['title']} is due {todo['date']}</li>)
     return <ul>{listItems}</ul>
   }
 
