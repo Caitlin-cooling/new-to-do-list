@@ -51,25 +51,28 @@ class App extends React.Component {
     return dd + '/' + mm + '/' + yyyy;
   }
 
-  render() {
-    let form;
-    let todos;
-    let element;
+  createList() {
     let listItems;
 
     listItems = this.state.list.map((todo, i) => <li key={'todo-' + i}>{todo['title']} is due {this.formatDate(todo['date'])}</li>)
-    todos = <ul>{listItems}</ul>
+    return <ul>{listItems}</ul>
+  }
 
-    form = <form>
+  createForm() {
+    return (<form>
             <Label/>
             <div>
                 <Title title={this.state.title} handleTitleChange={this.handleTitleChange}/>
                 <DueDate dueDate={this.state.date} handleDateChange={this.handleDateChange}/>
                 <SubmitButton handleClick={this.handleClick}/>
               </div>
-          </form>
+          </form>)
+  }
 
-    element = <div>{todos}{form}</div>
+  render() {
+    let element;
+
+    element = <div>{this.createList()}{this.createForm()}</div>
     return (<div>{element}</div>);
   }
 }
