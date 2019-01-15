@@ -67,8 +67,8 @@ class App extends React.Component {
               handleTitleChange={this.handleTitleChange}
               dueDate={this.state.date}
               handleDateChange={this.handleDateChange}
-            /><br/>
-            <input type="submit" value="Create" onClick={this.handleClick}/>
+              handleClick={this.handleClick}
+            />
           </form>
     element = <div>{todos}{form}</div>
     return (<div>{element}</div>);
@@ -83,7 +83,12 @@ var Information = function(props) {
   return <div>
       <Title title={props.title} handleTitleChange={props.handleTitleChange}/>
       <DueDate dueDate={props.dueDate} handleDateChange={props.handleDateChange}/>
+      <SubmitButton handleClick={props.handleClick}/>
     </div>
+}
+
+var SubmitButton = function(props) {
+  return <input type="submit" value="Create" onClick={props.handleClick}/>
 }
 
 var Title = function(props) {
