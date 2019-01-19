@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import DatePicker from "react-datepicker";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import style from "react-datepicker/dist/react-datepicker.css";
 
 class App extends React.Component {
@@ -9,7 +10,14 @@ class App extends React.Component {
     this.state = {
       list: [],
       title: "",
-      date: new Date()
+      date: new Date(),
+      formProps: {
+        title: this.state.title,
+        handleTitleChange: this.handleTitleChange,
+        dueDate: this.state.date,
+        handleDateChange: this.handleDateChange,
+        handleClick: this.handleClick
+      }
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -54,23 +62,54 @@ class App extends React.Component {
     return dd + '/' + mm + '/' + yyyy;
   }
 
-  createForm() {
-    return (<form>
-            <Label/>
-            <div>
-                <Title title={this.state.title} handleTitleChange={this.handleTitleChange}/>
-                <DueDate dueDate={this.state.date} handleDateChange={this.handleDateChange}/>
-                <SubmitButton handleClick={this.handleClick}/>
-              </div>
-          </form>)
-  }
-
   render() {
     let element;
 
-    element = <div>{<ToDoList list={this.state.list}/>}{this.createForm()}</div>
-    return (<div>{element}</div>);
+    element = <Router>
+      <div>
+        <PageTitle/>
+        <Route exact path= "/" render={(props) => <HomePage {...props} list={this.state.list}/>}/>
+        <Route exact path= "/new" render={(props) => <CreateForm {...props} list={this.state.formProps}/>}/>
+      </div>
+    </Router>
+    return (<div style={appStyle}>{element}</div>);
   }
+}
+
+const appStyle = {
+  textAlign: 'center'
+}
+
+var HomePage = function(props) {
+  return <div>
+    <NewButton/>
+    <ToDoList list={props.list}/>
+  </div>
+}
+
+var CreateForm = function(props) {
+  return <form>
+            <Label/>
+            <div>
+              <Title title={props.list.title} handleTitleChange={props.list.handleTitleChange}/>
+              <DueDate dueDate={props.list.date} handleDateChange={props.list.handleDateChange}/>
+              <SubmitButton handleClick={props.list.handleClick}/>
+            </div>
+        </form>
+
+var NewButton = function() {
+  return <button>
+    <Link to="/new">Add new item</Link>
+  </button>
+}
+
+var PageTitle = function(props) {
+    const titleStyle = {
+      fontFamily: 'Monoton',
+      textAlign: 'center'
+    }
+
+  return <h1 style={titleStyle}>To Do List</h1>
 }
 
 var ToDoList = function(props) {
@@ -107,7 +146,7 @@ var DueDate = function (props) {
 }
 
 var SubmitButton = function(props) {
-  return <input type="submit" value="Create" onClick={props.handleClick}/>
+  return <div><br/><input type="submit" value="Create" onClick={props.handleClick}/></div>
 }
 
 ReactDOM.render(
