@@ -80,6 +80,7 @@ class App extends React.Component {
 
 const appStyle = {
   textAlign: 'center',
+  fontFamily: 'Helvetica'
 }
 
 const buttonStyle = {
@@ -95,7 +96,7 @@ const titleStyle = {
 }
 
 const labelStyle = {
-  fontFamily: 'Permanent Marker'
+  fontFamily: 'Helvetica'
 }
 
 const formStyle = {
@@ -107,9 +108,13 @@ const formStyle = {
   padding: 10
 }
 
-const divStyle = {
+  const divStyle = {
   textAlign: 'center',
   display: 'inline-block'
+}
+
+const listItemStyle = {
+  listStyle: 'none'
 }
 
 var HomePage = function(props) {
@@ -146,7 +151,7 @@ var PageTitle = function(props) {
 var ToDoList = function(props) {
   let listItems;
 
-  listItems = props.list.map((todo, i) => <li key={'todo-' + i}>{todo['title']} is due {todo['date']}</li>)
+  listItems = props.list.map((todo, i) => <li style={ listItemStyle } key={'todo-' + i} >{todo['title']} is due {todo['date']}</li>)
   return <ul>{listItems}</ul>
 }
 
