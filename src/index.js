@@ -30,6 +30,9 @@ class App extends React.Component {
     newList = this.state.list.slice();
     newList.push(hash);
     this.setState({list:newList});
+
+    this.setState({title:""})
+    this.setState({date:new Date()})
   }
 
   handleTitleChange() {
