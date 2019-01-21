@@ -79,7 +79,37 @@ class App extends React.Component {
 }
 
 const appStyle = {
-  textAlign: 'center'
+  textAlign: 'center',
+}
+
+const buttonStyle = {
+  textDecoration: 'none',
+  color: 'black',
+  fontFamily: 'Helvetica'
+}
+
+const titleStyle = {
+  fontFamily: 'Permanent Marker',
+  textAlign: 'center',
+  fontSize: '4em'
+}
+
+const labelStyle = {
+  fontFamily: 'Permanent Marker'
+}
+
+const formStyle = {
+  height: 200,
+  width: 200,
+  borderStyle: 'solid',
+  borderColor: 'black',
+  borderWidth: 1,
+  padding: 10
+}
+
+const divStyle = {
+  textAlign: 'center',
+  display: 'inline-block'
 }
 
 var HomePage = function(props) {
@@ -90,28 +120,26 @@ var HomePage = function(props) {
 }
 
 var CreateForm = function(props) {
-  return <form>
+  return <div style={ divStyle }>
+          <form style={ formStyle }>
             <Label/>
             <div>
               <Title title={props.title} handleTitleChange={props.handleTitleChange}/>
               <DueDate dueDate={props.dueDate} handleDateChange={props.handleDateChange}/>
+              <br/>
               <SubmitButton handleClick={props.handleClick}/>
             </div>
         </form>
+      </div>
     }
 
 var NewButton = function() {
   return <button>
-    <Link to="/new">Add new item</Link>
+    <Link style={ buttonStyle } to="/new">Add new item</Link>
   </button>
 }
 
 var PageTitle = function(props) {
-    const titleStyle = {
-      fontFamily: 'Monoton',
-      textAlign: 'center'
-    }
-
   return <h1 style={titleStyle}>To Do List</h1>
 }
 
@@ -123,7 +151,7 @@ var ToDoList = function(props) {
 }
 
 var Label = function() {
-  return <label>Add a new to do:</label>
+  return <label style={ labelStyle }>Add a new to do:</label>
 }
 
 var Title = function(props) {
@@ -149,7 +177,7 @@ var DueDate = function (props) {
 }
 
 var SubmitButton = function(props) {
-  return <button onClick={props.handleClick}><Link to="/">Submit</Link></button>
+  return <button onClick={props.handleClick}><Link to="/" style={ buttonStyle }>Submit</Link></button>
 }
 
 ReactDOM.render(
