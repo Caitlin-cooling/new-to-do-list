@@ -10,14 +10,7 @@ class App extends React.Component {
     this.state = {
       list: [],
       title: "",
-      date: new Date(),
-      formProps: {
-        title: this.state.title,
-        handleTitleChange: this.handleTitleChange,
-        dueDate: this.state.date,
-        handleDateChange: this.handleDateChange,
-        handleClick: this.handleClick
-      }
+      date: new Date()
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -69,7 +62,16 @@ class App extends React.Component {
       <div>
         <PageTitle/>
         <Route exact path= "/" render={(props) => <HomePage {...props} list={this.state.list}/>}/>
-        <Route exact path= "/new" render={(props) => <CreateForm {...props} list={this.state.formProps}/>}/>
+        <Route exact path= "/new"
+          render={(props) =>
+          <CreateForm {...props}
+            title={this.state.title}
+            handleTitleChange={this.handleTitleChange}
+            dueDate={this.state.date}
+            handleDateChange={this.handleDateChange}
+            handleClick={this.handleClick}
+            />}
+          />
       </div>
     </Router>
     return (<div style={appStyle}>{element}</div>);
@@ -91,11 +93,12 @@ var CreateForm = function(props) {
   return <form>
             <Label/>
             <div>
-              <Title title={props.list.title} handleTitleChange={props.list.handleTitleChange}/>
-              <DueDate dueDate={props.list.date} handleDateChange={props.list.handleDateChange}/>
-              <SubmitButton handleClick={props.list.handleClick}/>
+              <Title title={props.title} handleTitleChange={props.handleTitleChange}/>
+              <DueDate dueDate={props.dueDate} handleDateChange={props.handleDateChange}/>
+              <SubmitButton handleClick={props.handleClick}/>
             </div>
         </form>
+    }
 
 var NewButton = function() {
   return <button>
