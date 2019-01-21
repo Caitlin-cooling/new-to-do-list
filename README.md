@@ -21,3 +21,4 @@ This is spiked as it is a learning exercise in React. I plan to complete this ag
 * I would like to be able to move rendering of all to dos out of the app component
 * I would like to store the to dos so that they are accessible after the session has ended
 * I would like to style the interface so that it is more aesthetically pleasing.
+* I would like to prevent people from creating a due date of the past
