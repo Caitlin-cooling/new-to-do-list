@@ -62,7 +62,7 @@ class App extends React.Component {
     let element;
 
     element = <Router>
-      <div>
+      <div style={divStyle}>
         <PageTitle/>
         <Route exact path= "/" render={(props) => <HomePage {...props} list={this.state.list}/>}/>
         <Route exact path= "/new"
@@ -83,7 +83,12 @@ class App extends React.Component {
 
 const appStyle = {
   textAlign: 'center',
-  fontFamily: 'Helvetica'
+  fontFamily: 'Helvetica',
+  backgroundColor: '#F0EFEA',
+  width: '60%',
+  height: 500,
+  margin: 'auto',
+  padding: 10
 }
 
 const buttonStyle = {
@@ -94,6 +99,7 @@ const buttonStyle = {
 
 const titleStyle = {
   fontFamily: 'Permanent Marker',
+  color: '#D72C16',
   textAlign: 'center',
   fontSize: '4em'
 }
@@ -106,7 +112,7 @@ const formStyle = {
   height: 200,
   width: 200,
   borderStyle: 'solid',
-  borderColor: 'black',
+  borderColor: '#COB2B5',
   borderWidth: 1,
   padding: 10
 }
