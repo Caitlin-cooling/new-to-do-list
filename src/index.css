@@ -1,0 +1,45 @@
+.link {
+  text-decoration: none;
+  color: black;
+  font-family: Helvetica;
+}
+
+h1 {
+  font-family: Permanent Marker;
+  color: #D72C16;
+  text-align: center;
+  font-size: 4em;
+}
+
+li {
+  list-style: none;
+}
+
+label {
+  font-family: Helvetica;
+}
+
+#app {
+  text-align: center;
+  font-family: Helvetica;
+  background-color: #F0EFEA;
+  width: 60%;
+  height: 500;
+  margin: auto;
+  padding: 10;
+}
+
+
+.create-form {
+  height: 200;
+  width: 200;
+  border-style: solid;
+  border-color: #COB2B5;
+  border-width: 1;
+  padding: 10;
+}
+
+.center {
+  text-align: center;
+  display: inline-block;
+}

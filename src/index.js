@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import DatePicker from "react-datepicker";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import style from "react-datepicker/dist/react-datepicker.css";
+import './index.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -62,7 +63,7 @@ class App extends React.Component {
     let element;
 
     element = <Router>
-      <div style={divStyle}>
+      <div className='center'>
         <PageTitle/>
         <Route exact path= "/" render={(props) => <HomePage {...props} list={this.state.list}/>}/>
         <Route exact path= "/new"
@@ -77,53 +78,8 @@ class App extends React.Component {
           />
       </div>
     </Router>
-    return (<div style={appStyle}>{element}</div>);
+    return (<div id='app'>{element}</div>);
   }
-}
-
-const appStyle = {
-  textAlign: 'center',
-  fontFamily: 'Helvetica',
-  backgroundColor: '#F0EFEA',
-  width: '60%',
-  height: 500,
-  margin: 'auto',
-  padding: 10
-}
-
-const buttonStyle = {
-  textDecoration: 'none',
-  color: 'black',
-  fontFamily: 'Helvetica'
-}
-
-const titleStyle = {
-  fontFamily: 'Permanent Marker',
-  color: '#D72C16',
-  textAlign: 'center',
-  fontSize: '4em'
-}
-
-const labelStyle = {
-  fontFamily: 'Helvetica'
-}
-
-const formStyle = {
-  height: 200,
-  width: 200,
-  borderStyle: 'solid',
-  borderColor: '#COB2B5',
-  borderWidth: 1,
-  padding: 10
-}
-
-  const divStyle = {
-  textAlign: 'center',
-  display: 'inline-block'
-}
-
-const listItemStyle = {
-  listStyle: 'none'
 }
 
 var HomePage = function(props) {
@@ -134,8 +90,8 @@ var HomePage = function(props) {
 }
 
 var CreateForm = function(props) {
-  return <div style={ divStyle }>
-          <form style={ formStyle }>
+  return <div className='center'>
+          <form id='create-form'>
             <Label/>
             <div>
               <Title title={props.title} handleTitleChange={props.handleTitleChange}/>
@@ -149,23 +105,23 @@ var CreateForm = function(props) {
 
 var NewButton = function() {
   return <button>
-    <Link style={ buttonStyle } to="/new">Add new item</Link>
+    <Link className='link' to="/new">Add new item</Link>
   </button>
 }
 
 var PageTitle = function(props) {
-  return <h1 style={titleStyle}>To Do List</h1>
+  return <h1>To Do List</h1>
 }
 
 var ToDoList = function(props) {
   let listItems;
 
-  listItems = props.list.map((todo, i) => <li style={ listItemStyle } key={'todo-' + i} >{todo['title']} is due {todo['date']}</li>)
+  listItems = props.list.map((todo, i) => <li key={'todo-' + i} >{todo['title']} is due {todo['date']}</li>)
   return <ul>{listItems}</ul>
 }
 
 var Label = function() {
-  return <label style={ labelStyle }>Add a new to do:</label>
+  return <label>Add a new to do:</label>
 }
 
 var Title = function(props) {
@@ -191,10 +147,12 @@ var DueDate = function (props) {
 }
 
 var SubmitButton = function(props) {
-  return <button onClick={props.handleClick}><Link to="/" style={ buttonStyle }>Submit</Link></button>
+  return <button onClick={props.handleClick}>
+    <Link className='link' to="/">Submit</Link>
+  </button>
 }
 
 ReactDOM.render(
     <App/>,
-    document.getElementById('app')
+    document.getElementById('index')
   );
