@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import DatePicker from "react-datepicker";
+import { Menu } from 'semantic-ui-react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import style from "react-datepicker/dist/react-datepicker.css";
 import './index.css';
@@ -64,6 +65,7 @@ class App extends React.Component {
 
     element = <Router>
       <div className='center'>
+        <NavBar/>
         <PageTitle/>
         <Route exact path= "/" render={(props) => <HomePage {...props} list={this.state.list}/>}/>
         <Route exact path= "/new"
@@ -103,9 +105,20 @@ var CreateForm = function(props) {
       </div>
     }
 
+var NavBar = function() {
+  return <Menu color='blue' inverted >
+    <Menu.Item as={Link} to="/">
+      Home
+    </Menu.Item>
+    <Menu.Item as={Link} to="/new">
+      Add New
+    </Menu.Item>
+  </Menu>
+}
+
 var NewButton = function() {
   return <button>
-    <Link className='link' to="/new">Add new item</Link>
+    <Link className='link' to="/new">Create new</Link>
   </button>
 }
 
