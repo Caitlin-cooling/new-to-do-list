@@ -11,16 +11,18 @@ h1 {
 li {
   list-style: none;
   text-align: left;
+  font-size: 1.2em;
 }
 
-label {
+h4 {
   font-family: Helvetica;
+  font-size: 1.2em;
 }
 
 button {
   background-color: rgb(15, 38, 250);
   border-color: none;
-  border-radius: 7px;
+  border-radius: 6px;
   width: 110px;
   height: 30px;
 }
@@ -41,7 +43,7 @@ button {
 }
 
 .text-field {
-  border-radius: 7px;
+  border-radius: 6px;
   width: 150px;
   height: 25px;
   font-size: 1em;
