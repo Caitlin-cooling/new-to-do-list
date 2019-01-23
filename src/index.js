@@ -108,11 +108,15 @@ var CreateForm = function(props) {
 var NavBar = function() {
   return <Navbar>
     <Nav>
-      <NavItem href="/">
-        Home
+      <NavItem>
+        <Link style={{ color: 'black'}} to="/">
+          Home
+        </Link>
       </NavItem>
-      <NavItem href="/new">
-        Create new
+      <NavItem>
+        <Link style={{ color: 'black'}} to="/new">
+          Create new
+        </Link>
       </NavItem>
     </Nav>
   </Navbar>
