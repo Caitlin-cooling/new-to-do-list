@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import DatePicker from "react-datepicker";
+import { Navbar, Nav, NavItem } from "react-bootstrap";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import style from "react-datepicker/dist/react-datepicker.css";
 import './index.css';
@@ -105,6 +106,16 @@ var CreateForm = function(props) {
     }
 
 var NavBar = function() {
+  return <Navbar>
+    <Nav>
+      <NavItem href="/">
+        Home
+      </NavItem>
+      <NavItem href="/new">
+        Create new
+      </NavItem>
+    </Nav>
+  </Navbar>
 }
 
 var NewButton = function() {
