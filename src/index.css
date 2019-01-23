@@ -20,21 +20,15 @@ button {
   background-color: rgb(15, 38, 250);
   border-color: none;
   border-radius: 7px;
-  width: 100px;
+  width: 110px;
   height: 30px;
-}
-
-#app {
-  font-family: Helvetica;
-  margin: auto;
-  padding: 10;
 }
 
 .link {
   text-decoration: none;
   color: white;
   font-family: Helvetica;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 .create-form {
@@ -46,7 +40,20 @@ button {
   padding: 10;
 }
 
+.text-field {
+  border-radius: 7px;
+  width: 150px;
+  height: 25px;
+  font-size: 1em;
+}
+
 .center {
   text-align: center;
   display: inline-block;
+}
+
+#app {
+  font-family: Helvetica;
+  margin: auto;
+  padding: 10;
 }

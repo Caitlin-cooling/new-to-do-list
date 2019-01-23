@@ -121,12 +121,12 @@ var ToDoList = function(props) {
 }
 
 var Label = function() {
-  return <label>Add a new to do:</label>
+  return <h4>Add a new to do:</h4>
 }
 
 var Title = function(props) {
   return <p>
-    <input
+    <input className="text-field"
       type="text"
       placeholder="Title"
       value={props.title}
@@ -137,6 +137,7 @@ var Title = function(props) {
 var DueDate = function (props) {
   return <div>
     <DatePicker
+      className="text-field"
       todayButton={"Today"}
       placeholderText="Click to select a date"
       dateFormat="dd/MM/yyyy"
