@@ -123,7 +123,7 @@ var NewButton = function() {
 }
 
 var PageTitle = function(props) {
-  return <h1>To Do List</h1>
+  return <h1>To Do List  📝</h1>
 }
 
 var ToDoList = function(props) {
