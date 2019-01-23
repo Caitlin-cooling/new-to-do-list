@@ -1,12 +1,13 @@
 body {
-  background-color: rgb(231, 248, 253);
+  background-color: #f7d3c5;
 }
 
 h1 {
-  font-family: Permanent Marker;
+  font-family: 'Noto Sans', sans-serif;
+  color: #e24302;
   font-size: 4em;
   padding-left: 20px;
-  padding-top: 50px;
+  padding-top: 100px;
 }
 
 li {
@@ -20,28 +21,45 @@ h4 {
   font-size: 1.2em;
 }
 
-button {
+/* button {
   background-color: rgb(15, 38, 250);
   border-color: none;
   border-radius: 6px;
   width: 110px;
   height: 30px;
+} */
+/*
+.nav-button {
+  background-color: rgb(231, 248, 253);
+
+} */
+
+.home-button {
+  font-family: 'Monoton', cursive;
+  font-size: 2.5em;
+  color: #e24302;
+}
+
+.btn-custom {
+  color: #e24302;
+  background-color: #f9b99f;
 }
 
 .navbar {
-  background-color: rgb(231, 248, 253);
+  background-color: #f9b99f;
   width: 100%;
   margin-bottom: 0;
+  border-width: 0;
   border-radius: 0;
   position: fixed;
   top: 0;
 }
 
-.link {
+/* .link {
   text-decoration: none;
   color: white;
   font-family: Helvetica;
-}
+} */
 
 .create-form {
   height: 200;

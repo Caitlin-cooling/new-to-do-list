@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import DatePicker from "react-datepicker";
-import { Navbar, Nav, NavItem } from "react-bootstrap";
+import { Navbar, Nav, NavItem, Button } from "react-bootstrap";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import style from "react-datepicker/dist/react-datepicker.css";
 import './index.css';
@@ -108,27 +108,21 @@ var NavBar = function() {
   return <Navbar>
     <Nav>
       <NavItem>
-        <Link style={{ color: 'black'}} to="/">
-          Home
+        <Link className="home-button" to="/">
+          Do it
         </Link>
       </NavItem>
       <NavItem>
-        <button><Link style={{ color: 'white'}} to="/new">
+        <Button><Link className="btn-custom" to="/new">
           Create new
-        </Link></button>
+        </Link></Button>
       </NavItem>
     </Nav>
   </Navbar>
 }
 
-var NewButton = function() {
-  return <button>
-    <Link className='link' to="/new">Create new</Link>
-  </button>
-}
-
 var PageTitle = function(props) {
-  return <h1>To Do List  📝</h1>
+  return <h1>To Do List</h1>
 }
 
 var ToDoList = function(props) {
