@@ -86,7 +86,6 @@ class App extends React.Component {
 
 var HomePage = function(props) {
   return <div>
-    <NewButton/>
     <ToDoList list={props.list}/>
   </div>
 }
@@ -114,9 +113,9 @@ var NavBar = function() {
         </Link>
       </NavItem>
       <NavItem>
-        <Link style={{ color: 'black'}} to="/new">
+        <button><Link style={{ color: 'white'}} to="/new">
           Create new
-        </Link>
+        </Link></button>
       </NavItem>
     </Nav>
   </Navbar>
