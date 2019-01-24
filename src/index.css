@@ -18,7 +18,7 @@ h1 {
 
 /* ToDos */
 li {
-  list-style: none;
+  list-style-type: circle;
   text-align: left;
   font-size: 1.2em;
 }
