@@ -80,7 +80,7 @@ class App extends React.Component {
           <Shapes/>
       </div>
     </Router>
-    return (<div id='app'>{element}</div>);
+    return (<div>{element}</div>);
   }
 }
 
@@ -114,9 +114,9 @@ var NavBar = function() {
         </Link>
       </NavItem>
       <NavItem>
-        <Button><Link className="btn-custom" to="/new">
+        <Link className="new-button" to="/new">
           Create new
-        </Link></Button>
+        </Link>
       </NavItem>
     </Nav>
   </Navbar>

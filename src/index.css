@@ -11,26 +11,28 @@ h1 {
   padding-bottom: 40px;
 }
 
+.center {
+  text-align: center;
+  display: inline-block;
+}
+
+/* ToDos */
 li {
   list-style: none;
   text-align: left;
   font-size: 1.2em;
 }
 
-h4 {
-  font-family: Helvetica;
-  font-size: 1.2em;
+/* NavBar */
+.new-button {
+  color: #e24302;
+  background-color: #f9b99f;
 }
 
 .home-button {
   font-family: 'Monoton', cursive;
   font-size: 2.5em;
   color: #e24302;
-}
-
-.btn-custom {
-  color: #e24302;
-  background-color: #f9b99f;
 }
 
 .navbar {
@@ -43,6 +45,7 @@ h4 {
   top: 0;
 }
 
+/* Form */
 .create-form {
   height: 200;
   width: 200;
@@ -59,18 +62,7 @@ h4 {
   font-size: 1em;
 }
 
-.center {
-  text-align: center;
-  display: inline-block;
-}
-
-#app {
-  font-family: Helvetica;
-  margin: auto;
-  padding: 10;
-}
-
-/* shapes */
+/* Shapes */
 .egg {
   height: 400px;
   width: 250px;
