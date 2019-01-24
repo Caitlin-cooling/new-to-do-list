@@ -6,7 +6,7 @@ h1 {
   font-family: 'Noto Sans', sans-serif;
   color: #e24302;
   font-size: 3em;
-  padding-left: 20px;
+  padding-left: 30px;
   padding-top: 100px;
   padding-bottom: 40px;
 }
@@ -27,22 +27,22 @@ li {
 .new-button {
   color: #e24302;
   background-color: #f9b99f;
+  font-size: 1.3em;
 }
 
-.home-button {
+.home-button.navbar-brand {
   font-family: 'Monoton', cursive;
-  font-size: 2.5em;
+  font-size: 2.7em;
   color: #e24302;
 }
 
 .navbar {
   background-color: #f9b99f;
+  padding: 10px 0;
   width: 100%;
-  margin-bottom: 0;
   border-width: 0;
   border-radius: 0;
   position: fixed;
-  top: 0;
 }
 
 /* Form */

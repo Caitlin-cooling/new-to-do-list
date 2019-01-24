@@ -108,11 +108,13 @@ var CreateForm = function(props) {
 var NavBar = function() {
   return <Navbar>
     <Nav>
-      <NavItem>
+      <Navbar.Header>
+        <Navbar.Brand>
         <Link className="home-button" to="/">
           Do it
         </Link>
-      </NavItem>
+        </Navbar.Brand>
+      </Navbar.Header>
       <NavItem>
         <Link className="new-button" to="/new">
           Create new
