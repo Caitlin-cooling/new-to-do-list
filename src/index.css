@@ -62,6 +62,16 @@ li {
   font-size: 1em;
 }
 
+button.btn.btn-default {
+  background-color: #e24302;
+  border-color: none;
+}
+
+a.link {
+  color: white;
+  text-decoration: none;
+}
+
 /* Shapes */
 .egg {
   height: 400px;

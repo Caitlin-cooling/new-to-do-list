@@ -174,9 +174,9 @@ var DueDate = function (props) {
 }
 
 var SubmitButton = function(props) {
-  return <button onClick={props.handleClick}>
+  return <Button onClick={props.handleClick}>
     <Link className='link' to="/">Submit</Link>
-  </button>
+  </Button>
 }
 
 ReactDOM.render(
