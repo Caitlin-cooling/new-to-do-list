@@ -66,7 +66,6 @@ class App extends React.Component {
     element = <Router>
       <div className='center'>
         <NavBar/>
-        <PageTitle/>
         <Route exact path= "/" render={(props) => <HomePage {...props} list={this.state.list}/>}/>
         <Route exact path= "/new"
           render={(props) =>
@@ -78,6 +77,7 @@ class App extends React.Component {
             handleClick={this.handleClick}
             />}
           />
+          <Shapes/>
       </div>
     </Router>
     return (<div id='app'>{element}</div>);
@@ -86,6 +86,7 @@ class App extends React.Component {
 
 var HomePage = function(props) {
   return <div>
+    <PageTitle/>
     <ToDoList list={props.list}/>
   </div>
 }
@@ -93,7 +94,7 @@ var HomePage = function(props) {
 var CreateForm = function(props) {
   return <div className='center'>
           <form id='create-form'>
-            <Label/>
+            <FormTitle/>
             <div>
               <Title title={props.title} handleTitleChange={props.handleTitleChange}/>
               <DueDate dueDate={props.dueDate} handleDateChange={props.handleDateChange}/>
@@ -121,6 +122,19 @@ var NavBar = function() {
   </Navbar>
 }
 
+var Shapes = function() {
+  return <div className="egg">
+    <div className="tear">
+    </div>
+    <div className="top-circle">
+    </div>
+    <div className="oval">
+      <div className="circle">
+      </div>
+    </div>
+  </div>
+}
+
 var PageTitle = function(props) {
   return <h1>To Do List</h1>
 }
@@ -132,8 +146,8 @@ var ToDoList = function(props) {
   return <ul>{listItems}</ul>
 }
 
-var Label = function() {
-  return <h4>Add a new to do:</h4>
+var FormTitle = function() {
+  return <h1>Add a new to do</h1>
 }
 
 var Title = function(props) {

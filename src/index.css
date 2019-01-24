@@ -5,9 +5,10 @@ body {
 h1 {
   font-family: 'Noto Sans', sans-serif;
   color: #e24302;
-  font-size: 4em;
+  font-size: 3em;
   padding-left: 20px;
   padding-top: 100px;
+  padding-bottom: 40px;
 }
 
 li {
@@ -20,19 +21,6 @@ h4 {
   font-family: Helvetica;
   font-size: 1.2em;
 }
-
-/* button {
-  background-color: rgb(15, 38, 250);
-  border-color: none;
-  border-radius: 6px;
-  width: 110px;
-  height: 30px;
-} */
-/*
-.nav-button {
-  background-color: rgb(231, 248, 253);
-
-} */
 
 .home-button {
   font-family: 'Monoton', cursive;
@@ -54,12 +42,6 @@ h4 {
   position: fixed;
   top: 0;
 }
-
-/* .link {
-  text-decoration: none;
-  color: white;
-  font-family: Helvetica;
-} */
 
 .create-form {
   height: 200;
@@ -86,4 +68,59 @@ h4 {
   font-family: Helvetica;
   margin: auto;
   padding: 10;
+}
+
+/* shapes */
+.egg {
+  height: 400px;
+  width: 250px;
+  background-color: orange;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  text-align: right;
+  position: absolute;
+  left: 60%;
+  top: 40%;
+  opacity: 0.9;
+}
+
+.oval {
+  height: 150px;
+  width: 300px;
+  background-color: #e24302;
+  position: absolute;
+  top: 250px;
+  left: 100px;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.circle {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  left: 20px;
+}
+
+.top-circle {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  left: 235px;
+}
+
+.tear {
+  width: 150px;
+  height: 150px;
+  border-radius: 50% 0 50% 50%;
+  background-color: #b0e8fc;
+  transform: rotate(180deg);
+  position: absolute;
+  left: 270px;
+  top: 80px;
 }
