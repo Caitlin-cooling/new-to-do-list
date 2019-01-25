@@ -17,6 +17,10 @@ Style-loader is used as the CSS loader is used to handle CSS and react-datepicke
 ## My Approach to Solving this Problem
 This is spiked as it is a learning exercise in React. I plan to complete this again fully test driven.
 
-## Known Issues
+## Left to do
 * I would like to store the to dos so that they are accessible after the session has ended
 * I would like to prevent people from creating a due date of the past
+* It is super annoying that you have to click on the exact text of the create Button
+* I would like a user to be able to tick off to ToDos
+* Sort the todos by date
+* Fix highlighting on buttons and text boxes
