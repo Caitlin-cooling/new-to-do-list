@@ -19,6 +19,12 @@ class App extends React.Component {
     this.handleDateChange = this.handleDateChange.bind(this);
   }
 
+  sort(array) {
+    array.sort(function(obj1, obj2){
+      return obj1.date - obj2.date;
+     });
+  }
+
   handleClick(e) {
     let hash = {};
     let date = "";
@@ -27,12 +33,13 @@ class App extends React.Component {
 
     date = this.state.date.toString();
     hash['title'] = this.state.title;
-    hash['date'] = this.formatDate(date);
+    hash['date'] = new Date(this.state.date);
 
     newList = this.state.list.slice();
     newList.push(hash);
-    this.setState({list:newList});
+    this.sort(newList);
 
+    this.setState({list:newList});
     this.setState({title:""})
     this.setState({date:new Date()})
   }
@@ -43,21 +50,6 @@ class App extends React.Component {
 
   handleDateChange(date) {
     this.setState({date: date})
-  }
-
-  formatDate(date) {
-    var dueDate = new Date(this.state.date);
-    var dd = dueDate.getDate();
-    var mm = dueDate.getMonth() + 1;
-
-    var yyyy = dueDate.getFullYear();
-    if (dd < 10) {
-      dd = '0' + dd;
-    }
-    if (mm < 10) {
-      mm = '0' + mm;
-    }
-    return dd + '/' + mm + '/' + yyyy;
   }
 
   render() {
@@ -144,7 +136,21 @@ var PageTitle = function(props) {
 var ToDoList = function(props) {
   let listItems;
 
-  listItems = props.list.map((todo, i) => <li key={'todo-' + i} >{todo['title']} is due {todo['date']}</li>)
+  function formatDate(date) {
+    var dd = date.getDate();
+    var mm = date.getMonth() + 1;
+
+    var yyyy = date.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+    return dd + '/' + mm + '/' + yyyy;
+  }
+
+  listItems = props.list.map((todo, i) => <li key={'todo-' + i} >{todo['title']} is due {formatDate(todo['date'])}</li>)
   return <ul>{listItems}</ul>
 }
 
