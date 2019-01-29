@@ -2,9 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { HomePage } from "./homepage.js";
 import { CreateForm } from "./createform.js";
-import { Navbar, Nav, NavItem } from "react-bootstrap";
+import { NavBar } from "./navbar.js";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import style from "react-datepicker/dist/react-datepicker.css";
 import './index.css';
 
 class App extends React.Component {
@@ -75,25 +74,6 @@ class App extends React.Component {
     </Router>
     return (<div>{element}</div>);
   }
-}
-
-var NavBar = function() {
-  return <Navbar>
-    <Nav>
-      <Navbar.Header>
-        <Navbar.Brand>
-        <Link className="home-button" to="/">
-          Do it
-        </Link>
-        </Navbar.Brand>
-      </Navbar.Header>
-      <NavItem>
-        <Link className="new-button" to="/new">
-          Create new
-        </Link>
-      </NavItem>
-    </Nav>
-  </Navbar>
 }
 
 var Shapes = function() {
