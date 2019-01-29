@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { HomePage } from "./homepage.js";
 import { CreateForm } from "./createform.js";
 import { NavBar } from "./navbar.js";
+import { Shapes } from "./shapes.js";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './index.css';
 
@@ -74,19 +75,6 @@ class App extends React.Component {
     </Router>
     return (<div>{element}</div>);
   }
-}
-
-var Shapes = function() {
-  return <div className="egg">
-    <div className="tear">
-    </div>
-    <div className="top-circle">
-    </div>
-    <div className="oval">
-      <div className="circle">
-      </div>
-    </div>
-  </div>
 }
 
 ReactDOM.render(
