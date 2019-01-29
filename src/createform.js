@@ -1,5 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import './global.js';
 import DatePicker from "react-datepicker";
 import style from "react-datepicker/dist/react-datepicker.css";
 import { Button } from "react-bootstrap";

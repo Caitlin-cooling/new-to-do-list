@@ -1,5 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import './global.js';
 import { Navbar, Nav, NavItem } from "react-bootstrap";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 

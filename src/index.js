@@ -1,5 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import './global.js';
 import { HomePage } from "./homepage.js";
 import { CreateForm } from "./createform.js";
 import { NavBar } from "./navbar.js";

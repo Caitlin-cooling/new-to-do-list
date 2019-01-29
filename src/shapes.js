@@ -1,5 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import './global.js';
 
 export var Shapes = function() {
   return <div className="egg">

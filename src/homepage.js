@@ -1,5 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import './global.js';
 import { ToDoList } from "./todolist.js";
 
 export var HomePage = function(props) {
