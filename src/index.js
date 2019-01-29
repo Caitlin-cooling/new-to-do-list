@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { HomePage } from "./homepage.js";
 import DatePicker from "react-datepicker";
 import { Navbar, Nav, NavItem, Button } from "react-bootstrap";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
@@ -76,13 +77,6 @@ class App extends React.Component {
   }
 }
 
-var HomePage = function(props) {
-  return <div>
-    <PageTitle/>
-    <ToDoList list={props.list}/>
-  </div>
-}
-
 var CreateForm = function(props) {
   return <div className='center'>
           <form id='create-form'>
@@ -127,31 +121,6 @@ var Shapes = function() {
       </div>
     </div>
   </div>
-}
-
-var PageTitle = function(props) {
-  return <h1>To Do List</h1>
-}
-
-var ToDoList = function(props) {
-  let listItems;
-
-  function formatDate(date) {
-    var dd = date.getDate();
-    var mm = date.getMonth() + 1;
-
-    var yyyy = date.getFullYear();
-    if (dd < 10) {
-      dd = '0' + dd;
-    }
-    if (mm < 10) {
-      mm = '0' + mm;
-    }
-    return dd + '/' + mm + '/' + yyyy;
-  }
-
-  listItems = props.list.map((todo, i) => <li key={'todo-' + i} >{todo['title']} is due {formatDate(todo['date'])}</li>)
-  return <ul>{listItems}</ul>
 }
 
 var FormTitle = function() {
