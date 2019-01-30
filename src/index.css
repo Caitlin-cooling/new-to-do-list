@@ -23,6 +23,27 @@ li {
   font-size: 1.2em;
 }
 
+
+.not-done {
+  color: #606060;
+  text-decoration: none;
+}
+
+.not-done:hover {
+  color: #606060;
+  text-decoration: none;
+}
+
+.done {
+  color: #606060;
+  text-decoration: line-through;
+}
+
+.done:hover {
+  color: #606060;
+  text-decoration: line-through;
+}
+
 /* NavBar */
 .new-button {
   color: #e24302;

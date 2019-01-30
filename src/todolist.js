@@ -31,9 +31,11 @@ export class ToDoList extends React.Component {
 
   render() {
     this.state.listItems = this.state.list.map((todo, i) =>
-            <li key={'todo-' + i} >
-              {todo['title']} is due {this.formatDate(todo['date'])}
-            </li>)
+            <a key={'todo-' + i} onClick={this.handleClick}>
+              <li className={this.state.clicked ? 'done' : 'not-done'}>
+                {todo['title']} is due {this.formatDate(todo['date'])}
+              </li>
+            </a>)
     return (<ul>{this.state.listItems}</ul>)
   }
 }
