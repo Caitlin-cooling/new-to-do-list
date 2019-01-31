@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`navbar is rendered 1`] = `
+<nav
+  className="navbar navbar-default"
+>
+  <div
+    className="container"
+  >
+    <ul
+      className="nav navbar-nav"
+      role={null}
+    >
+      <div
+        className="navbar-header"
+        onSelect={null}
+      >
+        <a
+          className="home-button navbar-brand"
+          href="/"
+          onClick={[Function]}
+        >
+          Do it
+        </a>
+      </div>
+      <li
+        className=""
+        role="presentation"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          <a
+            className="new-button"
+            href="/new"
+            onClick={[Function]}
+          >
+            Create new
+          </a>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+`;
