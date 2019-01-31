@@ -14,6 +14,11 @@ This app uses the React library, including ReactDOM. It uses Babel to translate 
 
 Style-loader is used as the CSS loader is used to handle CSS and react-datepicker is used for the due date calendar.
 
+## Testing
+Tests are written using Jest, and can be run using `npm run test`.
+
+Tests can be found in `tests` folder.
+
 ## My Approach to Solving this Problem
 This is spiked as it is a learning exercise in React. I plan to complete this again fully test driven.
 
